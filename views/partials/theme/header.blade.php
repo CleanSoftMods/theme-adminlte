@@ -11,13 +11,16 @@
             <span class="icon-bar"></span>
         </a>
         <div class="navbar-custom-menu">
-            @if (!Auth::staff()->guest()) {{ Theme::partial('theme.topbar-header') }}
+            @if (!Auth::guest())
+
+                {{ Theme::partial('theme.topbar-header') }}
+
             @endif
         </div>
     </nav>
 </header>
 
-@if(!Auth::staff()->guest() && Auth::staff()->get()->isAdmin())
+@if(!Auth::guest() && Auth::user()->isAdmin())
 <aside class="main-sidebar">
     <section class="sidebar">
         {{ Menu::handler('acp')->render() }}

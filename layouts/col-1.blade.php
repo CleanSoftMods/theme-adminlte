@@ -31,7 +31,7 @@ if (Request::is('admin/login')) {
 }
 ?>
 
-<body class="skin-orange fixed {{ $currentRoute }}">
+<body class="skin-blue fixed {{ $currentRoute }}">
 
 <div class="wrapper">
 

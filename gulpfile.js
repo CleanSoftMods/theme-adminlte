@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var gutil = require('gulp-util');
 var less  = require('gulp-less');
 var minifycss = require('gulp-minify-css');
 var rename = require('gulp-rename');
@@ -35,7 +34,7 @@ gulp.task('theme', function() {
         .pipe(notify({ message: 'eBullion Theme styles built' }));
 });
 
-gulp.task('dependencies', ['dependencies-css', 'dependencies-js']);
+gulp.task('dependencies', ['dependencies-js']);
 gulp.task('build', ['dependencies', 'theme']);
 
 // add a watcher in for the theme less files

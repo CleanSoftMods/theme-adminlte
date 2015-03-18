@@ -1,4 +1,3 @@
-<?php //echo \Debug::dump([$options, $callbacks, $values, $data, $columns, $noScript, $id, $class], ''); ?>
 <div class="box box-primary">
     <div class="box-body">
         <table class="table dataTable table-striped table-bordered">

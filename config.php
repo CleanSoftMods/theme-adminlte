@@ -1,19 +1,12 @@
 <?php
 
 return array(
-    // theme info
     'name'    => 'adminlte',
-    'author'  => 'Almsaeed Studio',
-    'site'    => 'http://almsaeedstudio.com/AdminLTE/',
-    'type'    => 'backend',
-    'version' => '2.0',
-
-    // theme options
-    'inherit' => 'default', //default
+    'inherit' => 'default_admin', //default
 
     'events' => array(
         'before' => function ($theme) {
-            $theme->setTitle( Config::get('app.site-name').' Admin Panel');
+            $theme->setTitle(config('cms.core.app.site-name').' Admin Panel');
 
             // Breadcrumb template.
             $theme->breadcrumb()->setTemplate('
@@ -30,16 +23,8 @@ return array(
         },
 
         'asset' => function ($theme) {
-            $theme->cook('datagrid', function ($theme) {
-                $theme->add('tempojs', '/packages/cartalyst/data-grid/js/tempo.js', array('app.js'));
-                $theme->add('datagridjs', '/packages/cartalyst/data-grid/js/data-grid.js', array('app.js', 'tempojs'));
-            });
-
-            Assets::add('admin');
-
-            $theme->usePath()->add('base', 'css/style.min.css');
-            $theme->usePath()->add('admin_lte.js', 'js/admin_lte.js');
-            $theme->usePath()->add('application.js', 'js/app/application.js');
+            $theme->add('base', 'themes/adminlte/css/app.css');
+            $theme->add('admin_lte.js', 'themes/adminlte/js/all.js');
         },
 
         // add dropdown-menu classes and such for the bootstrap toggle
@@ -52,6 +37,10 @@ return array(
                     if ($itemList->getParent() !== null && $itemList->hasChildren()) {
                         $itemList->getParent()->addClass('treeview');
                         $itemList->addClass('treeview-menu');
+                    }
+
+                    if ($itemList->hasActiveChild()) {
+                        $itemList->addClass('active');
                     }
                 });
 
@@ -70,7 +59,14 @@ return array(
                 });
 
             // set the nav up for the sidenav
-            Menu::handler('acp.config_menu')->addClass('nav');
+            Menu::handler('acp.config_menu')->addClass('list-group')->setElement('ul');
+
+            Menu::handler('acp.config_menu')
+                ->getItemsByContentType('Menu\Items\Contents\Link')
+                ->map(function ($item) {
+                    $item->addClass('list-group-item');
+                });
+
         }
     )
 );

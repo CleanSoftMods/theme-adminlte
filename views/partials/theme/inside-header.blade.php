@@ -1,6 +1,6 @@
     <section class="content-header">
-        <h1>{{ Theme::place('title') }}</h1>
-        {{ Theme::breadcrumb()->render() }}
+        <h1>{!! Theme::place('title') !!}</h1>
+        {!! Theme::breadcrumb()->render() !!}
         <div class="row">
             <div class="col-md-12">
                 <?php $actions = Theme::getActions(); ?>
@@ -17,4 +17,4 @@
         </div>
     </section>
 
-    {{ Theme::partial('theme.msgs') }}
+    {!! Theme::partial('theme.msgs') !!}

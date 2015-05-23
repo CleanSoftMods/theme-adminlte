@@ -1,5 +1,5 @@
 <header class="main-header">
-    <a href="{{ URL::route('pxcms.admin.index') }}" class="logo">{{ Config::get('core::app.site-name') }}</a>
+    <a href="{{ URL::route('pxcms.admin.index') }}" class="logo">{{ config('cms.core.app.site-name') }}</a>
 
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
@@ -13,7 +13,7 @@
         <div class="navbar-custom-menu">
             @if (!Auth::guest())
 
-                {{ Theme::partial('theme.topbar-header') }}
+                {!! Theme::partial('theme.topbar-header') !!}
 
             @endif
         </div>
@@ -23,7 +23,7 @@
 @if(!Auth::guest() && Auth::user()->isAdmin())
 <aside class="main-sidebar">
     <section class="sidebar">
-        {{ Menu::handler('acp')->render() }}
+        {!! Menu::handler('acp')->render() !!}
     </section>
 </aside>
 @endif

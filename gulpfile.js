@@ -1,55 +1,44 @@
 var gulp = require('gulp');
-var less  = require('gulp-less');
-var minifycss = require('gulp-minify-css');
-var rename = require('gulp-rename');
-var autoprefixer = require('gulp-autoprefixer');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var flatten = require('gulp-flatten');
-var imagemin = require('gulp-imagemin');
-var notify = require('gulp-notify');
-var cache = require('gulp-cache');
-var livereload = require('gulp-livereload');
+var shell = require('gulp-shell');
+var elixir = require('laravel-elixir');
+var themeInfo = require('./theme.json');
 
-gulp.task('dependencies-js', function() {
-    return gulp.src([
-            'assets/js/src/application.js',
-            'assets/js/src/dashboard-view.js',
-        ])
-        .pipe(concat('dependencies.js'))
-        .pipe(gulp.dest('assets/js'))
-        .pipe(notify({ message: 'Dependencies JS task complete' }));
+elixir.extend('themePublish', function() {
+    gulp.task('themePublish', function() {
+        gulp.src('').pipe(shell('php ../../artisan theme:publish '+themeInfo.name));
+    });
+
+    this.registerWatcher('themePublish', '**/*.less');
+
+    return this.queueTask('themePublish');
 });
 
-gulp.task('theme', function() {
-    return gulp.src('assets/css/less/style.less')
-        .pipe(less())
-        .on('error', swallowError)
-        .pipe(autoprefixer('last 10 version'))
-        .pipe(gulp.dest('assets/css'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(minifycss())
-        .pipe(gulp.dest('assets/css'))
-        .pipe(livereload())
-        .pipe(notify({ message: 'eBullion Theme styles built' }));
+/*
+ |--------------------------------------------------------------------------
+ | Elixir Asset Management
+ |--------------------------------------------------------------------------
+ |
+ | Elixir provides a clean, fluent API for defining some basic Gulp tasks
+ | for your Laravel application. By default, we are compiling the Less
+ | file for our application, as well as publishing vendor resources.
+ |
+ */
+
+elixir.config.publicDir = '../../public';
+elixir.config.cssOutput = 'assets/css';
+elixir.config.jsOutput = 'assets/js';
+
+elixir(function(mix) {
+    mix.less('app.less');
+    mix.scripts([
+        'assets/vendor/jquery/dist/jquery.js',
+        'assets/vendor/bootstrap/dist/js/bootstrap.js',
+        'assets/js/slimScroll.js',
+        'assets/js/admin_lte.js',
+        'assets/js/src/dependencies.js',
+        'assets/js/src/application.js'
+    ], null, 'resources');
+    mix.copy('resources/assets/vendor/font-awesome/fonts', 'assets/fonts');
+    mix.copy('resources/assets/vendor/bootstrap/fonts', 'assets/fonts');
+    mix.themePublish();
 });
-
-gulp.task('dependencies', ['dependencies-js']);
-gulp.task('build', ['dependencies', 'theme']);
-
-// add a watcher in for the theme less files
-gulp.task('watch', function() {
-    livereload.listen();
-
-    gulp.watch('assets/css/**/*.less', ['theme']);
-    gulp.watch('assets/css/less/variables.less', ['theme']);
-
-    gulp.watch('assets/js/src/*.js', ['dependencies-js']);
-});
-
-
-function swallowError (error) {
-    //If you want details of the error in the console
-    console.log(error.toString());
-    this.emit('end');
-}

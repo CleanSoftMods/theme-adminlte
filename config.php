@@ -38,10 +38,6 @@ return array(
                         $itemList->getParent()->addClass('treeview');
                         $itemList->addClass('treeview-menu');
                     }
-
-                    if ($itemList->hasActiveChild()) {
-                        $itemList->addClass('active');
-                    }
                 });
 
             // add dropdown class to the li if the set has children
@@ -51,10 +47,6 @@ return array(
                     if ($item->hasChildren()) {
                         $item->getValue()->addClass('header');
                         $item->getValue()->setValue('<span>'.$item->getValue()->getValue().'</span> <i class="fa fa-angle-left pull-right"></i>');
-                    }
-
-                    if (strpos(Request::url(), $item->getValue()->getUrl()) !== false) {
-                        $item->getParent()->addClass('active');
                     }
                 });
 

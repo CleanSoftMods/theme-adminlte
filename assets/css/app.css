@@ -12565,5 +12565,13 @@ Gradient Background colors
     background-color: none;
   }
 }
+.sidebar-menu li.active-child > a > .fa-angle-left {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.sidebar-menu li.active-child > .treeview-menu {
+  display: block;
+}
 
 /*# sourceMappingURL=app.css.map */

@@ -1,6 +1,3 @@
-@extends(partial('admin::admin.config._layout'), ['col_two' => 9])
-
-@section('admin-config')
     <div class="nav-tabs-custom">
         <ul class="nav nav-tabs pull-right">
             <li><a href="#backend" data-toggle="tab">Backend Themes</a></li>
@@ -55,4 +52,3 @@
         @endforeach
         </div>
     </div>
-@stop

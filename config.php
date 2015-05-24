@@ -2,7 +2,7 @@
 
 return [
     'name'    => 'adminlte',
-    'inherit' => 'default_admin', //default
+    'inherit' => 'default', //default
 
     'events' => [
         'before' => function ($theme) {
@@ -52,13 +52,7 @@ return [
                 });
 
             // set the nav up for the sidenav
-            Menu::handler('acp.config_menu')->addClass('list-group');
-
-            Menu::handler('acp.config_menu')
-                ->getItemsByContentType('Menu\Items\Contents\Link')
-                ->map(function ($item) {
-                    $item->addClass('list-group-item');
-                });
+            Menu::handler('acp.config_menu')->addClass('nav nav-list');
 
         }
     ]

@@ -12574,6 +12574,9 @@ parseUri.options = {
 };
 
 (function($) {
+    // add support for csrf header
+    jQuery.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+
     initBS();
     $( document ).ajaxSuccess(function( event, request, settings ) {
         initBS();

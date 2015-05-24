@@ -30,9 +30,9 @@ return [
 
         // add dropdown-menu classes and such for the bootstrap toggle
         'beforeRenderTheme' => function ($theme) {
-            Menu::handler('acp')->addClass('sidebar-menu');
+            Menu::handler('backend_sidebar')->addClass('sidebar-menu');
 
-            Menu::handler('acp')
+            Menu::handler('backend_sidebar')
                 ->getAllItemLists()
                 ->map(function ($itemList) {
                     if ($itemList->getParent() !== null && $itemList->hasChildren()) {
@@ -42,7 +42,7 @@ return [
                 });
 
             // add dropdown class to the li if the set has children
-            Menu::handler('acp')
+            Menu::handler('backend_sidebar')
                 ->getItemsByContentType('Menu\Items\Contents\Link')
                 ->map(function ($item) {
                     if ($item->hasChildren()) {
@@ -52,8 +52,7 @@ return [
                 });
 
             // set the nav up for the sidenav
-            Menu::handler('acp.config_menu')->addClass('nav nav-list');
-
+            Menu::handler('backend_config_menu')->addClass('nav nav-list');
         }
     ]
 ];

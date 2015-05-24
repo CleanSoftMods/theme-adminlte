@@ -23,7 +23,7 @@
 @if(!Auth::guest() && Auth::user()->isAdmin())
 <aside class="main-sidebar">
     <section class="sidebar">
-        @menu('acp')
+        @menu('backend_sidebar')
     </section>
 </aside>
 @endif

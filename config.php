@@ -53,6 +53,7 @@ return [
 
             // set the nav up for the sidenav
             Menu::handler('backend_config_menu')->addClass('nav nav-list');
+            Menu::handler('backend_user_menu')->addClass('nav nav-list');
         }
     ]
 ];

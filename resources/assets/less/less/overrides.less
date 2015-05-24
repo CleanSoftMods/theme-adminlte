@@ -8,3 +8,30 @@
         }
     }
 }
+
+.form-control {
+    color: #333;
+}
+
+.list-group-item {
+    &.active,
+    &:hover,
+    &:focus {
+        > a {
+            color: @list-group-active-color;
+            background-color: @list-group-active-bg;
+            border-color: @list-group-active-border;
+
+            // Force color to inherit for custom content
+            .list-group-item-heading,
+            .list-group-item-heading > small,
+            .list-group-item-heading > .small {
+                color: inherit;
+            }
+            .list-group-item-text {
+                color: @list-group-active-text-color;
+            }
+        }
+
+    }
+}

@@ -1,16 +1,16 @@
 <?php
 
-return array(
+return [
     'name'    => 'adminlte',
     'inherit' => 'default_admin', //default
 
-    'events' => array(
+    'events' => [
         'before' => function ($theme) {
             $theme->setTitle(config('cms.core.app.site-name').' Admin Panel');
 
             // Breadcrumb template.
-            $theme->breadcrumb()->setTemplate('
-                <ol class="breadcrumb">
+            $theme->breadcrumb()->setTemplate(
+                '<ol class="breadcrumb">
                 @foreach ($crumbs as $i => $crumb)
                     @if ($i != (count($crumbs) - 1))
                     <li><a href="{{ $crumb["url"] }}">{{ $crumb["label"] }}</a></li>
@@ -18,13 +18,14 @@ return array(
                     <li class="active">{{ $crumb["label"] }}</li>
                     @endif
                 @endforeach
-                </ol>
-            ');
+                </ol>'
+            );
         },
 
         'asset' => function ($theme) {
-            $theme->add('base', 'themes/adminlte/css/app.css');
-            $theme->add('admin_lte.js', 'themes/adminlte/js/all.js');
+            $themeName = config('cms.core.app.themes.backend');
+            $theme->add('css', 'themes/'.$themeName.'/css/app.css');
+            $theme->container('footer')->add('js', 'themes/'.$themeName.'/js/all.js');
         },
 
         // add dropdown-menu classes and such for the bootstrap toggle
@@ -51,7 +52,7 @@ return array(
                 });
 
             // set the nav up for the sidenav
-            Menu::handler('acp.config_menu')->addClass('list-group')->setElement('ul');
+            Menu::handler('acp.config_menu')->addClass('list-group');
 
             Menu::handler('acp.config_menu')
                 ->getItemsByContentType('Menu\Items\Contents\Link')
@@ -60,5 +61,5 @@ return array(
                 });
 
         }
-    )
-);
+    ]
+];

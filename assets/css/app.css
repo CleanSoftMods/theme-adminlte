@@ -12573,5 +12573,31 @@ Gradient Background colors
 .sidebar-menu li.active-child > .treeview-menu {
   display: block;
 }
+.form-control {
+  color: #333;
+}
+.list-group-item.active > a,
+.list-group-item:hover > a,
+.list-group-item:focus > a {
+  color: #ffffff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.list-group-item.active > a .list-group-item-heading,
+.list-group-item:hover > a .list-group-item-heading,
+.list-group-item:focus > a .list-group-item-heading,
+.list-group-item.active > a .list-group-item-heading > small,
+.list-group-item:hover > a .list-group-item-heading > small,
+.list-group-item:focus > a .list-group-item-heading > small,
+.list-group-item.active > a .list-group-item-heading > .small,
+.list-group-item:hover > a .list-group-item-heading > .small,
+.list-group-item:focus > a .list-group-item-heading > .small {
+  color: inherit;
+}
+.list-group-item.active > a .list-group-item-text,
+.list-group-item:hover > a .list-group-item-text,
+.list-group-item:focus > a .list-group-item-text {
+  color: #c7ddef;
+}
 
 /*# sourceMappingURL=app.css.map */

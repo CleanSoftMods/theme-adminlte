@@ -3,8 +3,8 @@
         {!! Theme::breadcrumb()->render() !!}
         <div class="row">
             <div class="col-md-12">
-                <?php $actions = Theme::getActions(); ?>
-                @if( isset($actions['header']) && count($actions['header']) )
+                @setVar($actions, Theme::getActions())
+                @if(isset($actions['header']) && count($actions['header']))
                 <div class="actions-menu pull-right">
                     @foreach($actions['header'] as $btn)
                     <a class="{{ $btn['btn-class'] }}" href="{{ $btn['btn-link'] }}">
@@ -17,4 +17,6 @@
         </div>
     </section>
 
-    {!! Theme::partial('theme.msgs') !!}
+    <div class="col-md-12">
+        {!! Theme::partial('theme.msgs') !!}
+    </div>

@@ -3,12 +3,12 @@
         {!! Theme::breadcrumb()->render() !!}
         <div class="row">
             <div class="col-md-12">
-                @setVar($actions, Theme::getActions())
+                @set($actions, Theme::getActions())
                 @if(isset($actions['header']) && count($actions['header']))
                 <div class="actions-menu pull-right">
                     @foreach($actions['header'] as $btn)
-                    <a class="{{ $btn['btn-class'] }}" href="{{ $btn['btn-link'] }}">
-                        <span class="btn-label"><i class="{{ $btn['btn-icon'] }}"></i></span><span>{{ $btn['btn-text'] }}</span>
+                    <a class="{{ $btn['btn-class'] }}" href="{{ route($btn['btn-link']) }}">
+                        <span class="btn-label"><i class="{{ $btn['btn-icon'] }}"></i></span> <span>{{ $btn['btn-text'] }}</span>
                     </a>
                     @endforeach
                 </div>

@@ -62,7 +62,7 @@ return [
             });
 
             foreach ($menuKeys as $key) {
-                Menu::handler($key)->addClass('nav');
+                Menu::handler($key)->addClass('nav nav-list');
             }
         }
     ]

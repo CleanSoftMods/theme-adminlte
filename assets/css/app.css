@@ -2963,7 +2963,7 @@ select[multiple].form-group-lg .form-control {
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
@@ -5658,14 +5658,12 @@ button.close {
 }
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
-  -ms-transform: translate(0, -25%);
   transform: translate(0, -25%);
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
 }
 .modal.in .modal-dialog {
   -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
   transform: translate(0, 0);
 }
 .modal-open .modal {
@@ -6512,8 +6510,7 @@ button.close {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
-          transform: translate(0, 0);
+  transform: translate(0, 0);
 }
 /* makes the font 33% larger relative to the icon container */
 .fa-lg {
@@ -6603,31 +6600,26 @@ button.close {
 .fa-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 .fa-rotate-180 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 .fa-rotate-270 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   -webkit-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 .fa-flip-horizontal {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
   -webkit-transform: scale(-1, 1);
-  -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 .fa-flip-vertical {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
   -webkit-transform: scale(1, -1);
-  -ms-transform: scale(1, -1);
   transform: scale(1, -1);
 }
 :root .fa-rotate-90,
@@ -6636,7 +6628,7 @@ button.close {
 :root .fa-flip-horizontal,
 :root .fa-flip-vertical {
   -webkit-filter: none;
-          filter: none;
+  filter: none;
 }
 .fa-stack {
   position: relative;
@@ -8397,7 +8389,6 @@ body {
   .sidebar-open .right-side,
   .sidebar-open .main-footer {
     -webkit-transform: translate(230px, 0);
-    -ms-transform: translate(230px, 0);
     transform: translate(230px, 0);
   }
 }
@@ -8718,7 +8709,6 @@ a:focus {
   .main-sidebar,
   .left-side {
     -webkit-transform: translate(-230px, 0);
-    -ms-transform: translate(-230px, 0);
     transform: translate(-230px, 0);
   }
 }
@@ -8726,7 +8716,6 @@ a:focus {
   .sidebar-collapse .main-sidebar,
   .sidebar-collapse .left-side {
     -webkit-transform: translate(-230px, 0);
-    -ms-transform: translate(-230px, 0);
     transform: translate(-230px, 0);
   }
 }
@@ -8734,7 +8723,6 @@ a:focus {
   .sidebar-open .main-sidebar,
   .sidebar-open .left-side {
     -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
     transform: translate(0, 0);
   }
 }
@@ -8829,7 +8817,6 @@ a:focus {
 }
 .sidebar-menu li.active > a > .fa-angle-left {
   -webkit-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
 .sidebar-menu li.active > .treeview-menu {
@@ -9144,60 +9131,60 @@ a:focus {
  the class .animated-dropdown-menu to the .dropdown-menu ul (or ol)*/
 .open:not(.dropup) > .animated-dropdown-menu {
   -webkit-backface-visibility: visible !important;
-          backface-visibility: visible !important;
+  backface-visibility: visible !important;
   -webkit-animation: flipInX 0.7s both;
   animation: flipInX 0.7s both;
 }
 @keyframes flipInX {
   0% {
     -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-            transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
     transition-timing-function: ease-in;
     opacity: 0;
   }
   40% {
     -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-            transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
     transition-timing-function: ease-in;
   }
   60% {
     -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-            transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
     opacity: 1;
   }
   80% {
     -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-            transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
   }
   100% {
     -webkit-transform: perspective(400px);
-            transform: perspective(400px);
+    transform: perspective(400px);
   }
 }
 @-webkit-keyframes flipInX {
   0% {
     -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-            transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
     transition-timing-function: ease-in;
     opacity: 0;
   }
   40% {
     -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-            transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
     transition-timing-function: ease-in;
   }
   60% {
     -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-            transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
     opacity: 1;
   }
   80% {
     -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-            transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
   }
   100% {
     -webkit-transform: perspective(400px);
-            transform: perspective(400px);
+    transform: perspective(400px);
   }
 }
 /* Fix dropdown menu in navbars */
@@ -10604,12 +10591,10 @@ table.text-center th {
 }
 .direct-chat.chat-pane-open .direct-chat-contacts {
   -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
   transform: translate(0, 0);
 }
 .direct-chat-messages {
   -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
   transform: translate(0, 0);
   padding: 10px;
   height: 250px;
@@ -10710,12 +10695,10 @@ table.text-center th {
 }
 .direct-chat-contacts-open .direct-chat-contacts {
   -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
   transform: translate(0, 0);
 }
 .direct-chat-contacts {
   -webkit-transform: translate(101%, 0);
-  -ms-transform: translate(101%, 0);
   transform: translate(101%, 0);
   position: absolute;
   top: 0;
@@ -12096,7 +12079,6 @@ fieldset[disabled] .btn-vk.active {
 }
 .fc-color-picker > li .fa:hover {
   -webkit-transform: rotate(30deg);
-  -ms-transform: rotate(30deg);
   transform: rotate(30deg);
 }
 #add-new-event {
@@ -12567,7 +12549,6 @@ Gradient Background colors
 }
 .sidebar-menu li.active-child > a > .fa-angle-left {
   -webkit-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
 .sidebar-menu li.active-child > .treeview-menu {
@@ -12622,6 +12603,35 @@ Gradient Background colors
 }
 .nav li + .nav-header {
   margin-top: 9px;
+}
+.panel-permissions .tab-content {
+  padding: 0 10px;
+}
+.panel-permissions .permission-row {
+  margin-bottom: 5px;
+}
+.panel-permissions .permission-row:hover {
+  background-color: #F5F5F5;
+}
+.panel-permissions .permissions-nav:not(.module) > .nav {
+  border-left: 1px solid #DDD;
+}
+.panel-permissions .permissions-nav > .nav {
+  border-right: 1px solid #DDD;
+  background-color: #F5F5F5;
+  min-height: 400px;
+}
+.panel-permissions .permissions-nav > .nav.nav-stacked > li.active > a,
+.panel-permissions .permissions-nav > .nav.nav-stacked > li.active > a:hover,
+.panel-permissions .permissions-nav > .nav.nav-stacked > li.active > a:focus {
+  background-color: #DDD;
+  color: #444;
+}
+.panel-permissions .permissions-nav > .nav.nav-stacked > li.disabled {
+  padding-left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0;
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -6,10 +6,7 @@
                 @set($actions, Theme::getActions())
                 @if(isset($actions['header']) && count($actions['header']))
                 <div class="actions-menu pull-right">
-                    @foreach($actions['header'] as $btn)
-                    <a class="{{ $btn['btn-class'] }}" href="{{ route($btn['btn-link']) }}">
-                        <span class="btn-label"><i class="{{ $btn['btn-icon'] }}"></i></span> <span>{{ $btn['btn-text'] }}</span>
-                    </a>
+                    @foreach($actions['header'] as $btn) {!! build_helper_button($btn) !!}
                     @endforeach
                 </div>
                 @endif

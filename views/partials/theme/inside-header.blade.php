@@ -6,7 +6,10 @@
                 @set($actions, Theme::getActions())
                 @if(isset($actions['header']) && count($actions['header']))
                 <div class="actions-menu pull-right">
-                    @foreach($actions['header'] as $btn) {!! build_helper_button($btn) !!}
+                    @foreach($actions['header'] as $btn)
+
+                        {!! build_helper_button($btn) !!}
+
                     @endforeach
                 </div>
                 @endif

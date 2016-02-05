@@ -17,6 +17,8 @@
         </div>
     </section>
 
-    <div class="col-md-12">
-        {!! Theme::partial('theme.msgs') !!}
+    <div class="row">
+        <div class="col-md-12">
+            {!! Theme::partial('theme.msgs') !!}
+        </div>
     </div>

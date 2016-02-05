@@ -12,9 +12,7 @@
         </a>
         <div class="navbar-custom-menu">
             @if (!Auth::guest())
-
                 {!! Theme::partial('theme.topbar-header') !!}
-
             @endif
         </div>
     </nav>
@@ -23,6 +21,15 @@
 @if(!Auth::guest() && Auth::user()->isAdmin())
 <aside class="main-sidebar">
     <section class="sidebar">
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="{{ Auth::user()->avatar }}" class="img-circle" alt="{{ Auth::user()->screenname }}'s Avatar">
+            </div>
+            <div class="pull-left info">
+                <p>{{ Auth::user()->screenname }}</p>
+                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+        </div>
         @menu('backend_sidebar')
     </section>
 </aside>

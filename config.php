@@ -45,9 +45,15 @@ return [
             Menu::handler('backend_sidebar')
                 ->getItemsByContentType('Menu\Items\Contents\Link')
                 ->map(function ($item) {
+                    $itemValue = $item->getValue()->getValue();
                     if ($item->hasChildren()) {
-                        $item->getValue()->addClass('header');
-                        $item->getValue()->setValue('<span>'.$item->getValue()->getValue().'</span> <i class="fa fa-angle-left pull-right"></i>');
+                        $value = sprintf('<span>%s</span> <i class="fa fa-angle-left pull-right"></i>', $itemValue);
+                        $item->getValue()->setValue($value);
+
+                    } else if ($item->getValue()->getUrl() === '#') {
+                        $item->addClass('header');
+                        $item->getValue()->setElement('span');
+                        $item->getParent()->setValue($itemValue);
                     }
                 });
 

@@ -1,4 +1,4 @@
-<ul class="nav navbar-nav">
+<ul class="nav navbar-nav navbar-right">
     <li class="dropdown user user-menu">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <img src="{{ Auth::user()->avatar }}" class="user-image" alt="{{ Auth::user()->screenname }}'s Avatar"/>

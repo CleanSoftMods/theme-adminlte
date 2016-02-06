@@ -13,6 +13,8 @@
             @yield('layout-content')
         </section>
     </div>
+
+    {!! Theme::partial('theme.footer') !!}
 </div>
 
 {!! Theme::partial('theme.modal') !!}

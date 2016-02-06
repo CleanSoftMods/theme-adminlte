@@ -10,6 +10,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </a>
+        <ul class="nav navbar-nav nav-left">
+            <li><a href="/">View Frontend</a></li>
+        </ul>
         <div class="navbar-custom-menu">
             @if (!Auth::guest())
                 {!! Theme::partial('theme.topbar-header') !!}
@@ -27,7 +30,7 @@
             </div>
             <div class="pull-left info">
                 <p>{{ Auth::user()->screenname }}</p>
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                <small><i class="fa fa-circle text-success"></i> Online</small>
             </div>
         </div>
         @menu('backend_sidebar')

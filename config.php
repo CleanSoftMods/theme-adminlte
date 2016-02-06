@@ -25,7 +25,7 @@ return [
         'asset' => function ($theme) {
             $themeName = config('cms.core.app.themes.backend');
             $theme->add('css', 'themes/'.$themeName.'/css/app.css');
-            $theme->add('js', 'themes/'.$themeName.'/js/all.js');
+            $theme->add('js', 'themes/'.$themeName.'/js/app.js');
         },
 
         // add dropdown-menu classes and such for the bootstrap toggle
@@ -64,7 +64,7 @@ return [
             }
             $menuKeys = array_unique($menuKeys);
             $menuKeys = array_filter($menuKeys, function ($name) {
-                return preg_match('/backend_([^_]+)_menu/', $name);
+                return preg_match('/backend_.*_menu/', $name);
             });
 
             foreach ($menuKeys as $key) {

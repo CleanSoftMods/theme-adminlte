@@ -15,7 +15,7 @@ elixir(function(mix) {
         'assets/vendor/jquery-ujs/src/rails.js',
         'assets/js/slimScroll.js',
         'assets/js/admin_lte.js'
-    ], null, 'resources');
+    ], 'assets/js/app.js', 'resources');
 
     // copy the fonts over
     mix.copy('resources/assets/vendor/font-awesome/fonts', 'assets/fonts')

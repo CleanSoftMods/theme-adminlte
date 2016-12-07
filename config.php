@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'name'    => 'adminlte',
+    'name' => 'adminlte',
     'inherit' => 'default', //default
 
     'events' => [
@@ -30,6 +30,12 @@ return [
 
         // add dropdown-menu classes and such for the bootstrap toggle
         'beforeRenderTheme' => function ($theme) {
+            $navService = (new \Cms\Modules\Core\Services\NavigationService());
+
+            // grab the navigations
+            $navService->boot();
+
+            // theme specific nav stuff
             Menu::handler('backend_sidebar')->addClass('sidebar-menu');
 
             Menu::handler('backend_sidebar')
@@ -49,27 +55,13 @@ return [
                     if ($item->hasChildren()) {
                         $value = sprintf('<span>%s</span> <i class="fa fa-angle-left pull-right"></i>', $itemValue);
                         $item->getValue()->setValue($value);
-
-                    } else if ($item->getValue()->getUrl() === '#') {
+                    } elseif ($item->getValue()->getUrl() === '#') {
                         $item->addClass('header');
                         $item->getValue()->setElement('span');
                         $item->getParent()->setValue($itemValue);
                     }
                 });
 
-            // grab the inline navs
-            $menuKeys = [];
-            foreach (get_array_column(config('cms'), 'menus') as $module => $menus) {
-                $menuKeys = array_merge($menuKeys, array_keys($menus));
-            }
-            $menuKeys = array_unique($menuKeys);
-            $menuKeys = array_filter($menuKeys, function ($name) {
-                return preg_match('/backend_.*_menu/', $name);
-            });
-
-            foreach ($menuKeys as $key) {
-                Menu::handler($key)->addClass('nav nav-list');
-            }
-        }
-    ]
+        },
+    ],
 ];

@@ -14,7 +14,7 @@
             </li>
             <li class="user-footer">
                 <div class="pull-right">
-                    <a href="{{ URL::route('pxcms.user.logout') }}" class="btn btn-default btn-flat">Sign out</a>
+                    <a href="{{ route('pxcms.user.logout') }}" class="btn btn-default btn-flat">Sign out</a>
                 </div>
             </li>
         </ul>

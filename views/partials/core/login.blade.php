@@ -1,9 +1,9 @@
 <div class="login-box">
     <div class="login-logo">
-        <a href="{{ URL::route('pxcms.admin.index') }}">{{ Config::get('core::app.site-name') }}</a>
+        <a href="{{ route('pxcms.admin.index') }}">{{ Config::get('core::app.site-name') }}</a>
     </div>
     <div class="login-box-body">
-        {{ Former::horizontal_open()->action(URL::route('pxcms.admin.login')) }}
+        {{ Former::horizontal_open()->action(route('pxcms.admin.login')) }}
             <div class="form-group has-feedback">
                 <input type="text" class="form-control" placeholder="Email" name="email" />
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

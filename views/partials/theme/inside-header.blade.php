@@ -1,6 +1,5 @@
     <section class="content-header">
         <h1>{!! Theme::place('title') !!}</h1>
-        {!! Theme::breadcrumb()->render() !!}
         <div class="row">
             <div class="col-md-12">
                 @set($actions, Theme::getActions())

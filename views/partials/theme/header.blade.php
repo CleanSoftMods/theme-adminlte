@@ -1,5 +1,5 @@
 <header class="main-header">
-    <a href="{{ URL::route('pxcms.admin.index') }}" class="logo">{{ config('cms.core.app.site-name') }}</a>
+    <a href="{{ route('pxcms.admin.index') }}" class="logo">{{ config('app.name') }}</a>
 
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
